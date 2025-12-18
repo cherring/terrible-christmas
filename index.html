@@ -200,19 +200,60 @@
         font-size: 18px;
       }
 
+      @keyframes linkRainbow {
+        0% {
+          color: #ff0000;
+        }
+        20% {
+          color: #00ff00;
+        }
+        40% {
+          color: #0000ff;
+        }
+        60% {
+          color: #ffff00;
+        }
+        80% {
+          color: #ff00ff;
+        }
+        100% {
+          color: #ff0000;
+        }
+      }
+
       a {
-        color: #0000ff;
         font-weight: bold;
         text-decoration: none;
+        animation: linkRainbow 1s infinite;
+        font-size: 24px !important;
       }
 
       a:visited {
-        color: #800080;
+        animation: linkRainbow 1s infinite;
       }
 
       .santa {
-        font-size: 100px;
+        font-size: 150px;
         display: inline-block;
+        animation: spin 3s linear infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          bottom: 0;
+        }
+        50% {
+          bottom: 200px;
+        }
+      }
+
+      .bouncing-snowman {
+        position: fixed;
+        bottom: 0;
+        font-size: 60px;
+        animation: bounce 2s ease-in-out infinite;
+        z-index: 9997;
       }
 
       .flying-reindeer {
@@ -360,16 +401,32 @@
       setInterval(createFlyingReindeer, 3000);
       createFlyingReindeer();
 
-      // Cursor trail
+      // Bouncing snowmen
+      function createBouncingSnowman() {
+        const snowman = document.createElement("div");
+        snowman.className = "bouncing-snowman";
+        snowman.innerHTML = "⛄";
+        snowman.style.left = Math.random() * (window.innerWidth - 60) + "px";
+        snowman.style.animationDelay = Math.random() * 2 + "s";
+        document.body.appendChild(snowman);
+      }
+
+      for (let i = 0; i < 5; i++) {
+        createBouncingSnowman();
+      }
+
+      // Cursor trail with multiple emojis
       document.addEventListener("mousemove", function (e) {
+        const emojis = ["🎄", "🎅", "🦌", "⛄", "🎁", "❄️", "🔔", "⭐"];
         const trail = document.createElement("div");
-        trail.innerHTML = "🎄";
+        trail.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
         trail.style.position = "absolute";
         trail.style.left = e.pageX + "px";
         trail.style.top = e.pageY + "px";
         trail.style.fontSize = "20px";
         trail.style.pointerEvents = "none";
         trail.style.zIndex = "1000";
+        trail.style.animation = "spin 1s linear";
         document.body.appendChild(trail);
 
         setTimeout(() => {
