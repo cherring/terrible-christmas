@@ -464,6 +464,11 @@
           alert(
             "🎅 MERRY CHRISTMAS! 🎄\n\nWelcome to the BEST Christmas site on the WORLD WIDE WEB!!!",
           );
+          // Try to play audio after user interaction
+          const audio = document.querySelector("audio");
+          if (audio) {
+            audio.play().catch((e) => console.log("Audio blocked:", e));
+          }
         }, 2000);
       };
 
