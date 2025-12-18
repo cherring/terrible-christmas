@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>*** MERRY CHRISTMAS 1999 ***</title>
+    <style>
+      @keyframes strobe {
+        0%,
+        100% {
+          background-color: #ff0000;
+        }
+        10% {
+          background-color: #00ff00;
+        }
+        20% {
+          background-color: #ff0000;
+        }
+        30% {
+          background-color: #0000ff;
+        }
+        40% {
+          background-color: #ff0000;
+        }
+        50% {
+          background-color: #ffff00;
+        }
+        60% {
+          background-color: #ff0000;
+        }
+        70% {
+          background-color: #ff00ff;
+        }
+        80% {
+          background-color: #ff0000;
+        }
+        90% {
+          background-color: #00ffff;
+        }
+      }
+
+      body {
+        background-color: #ff0000;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23FF0000" width="50" height="50"/><rect fill="%2300FF00" x="50" width="50" height="50"/><rect fill="%2300FF00" y="50" width="50" height="50"/><rect fill="%23FF0000" x="50" y="50" width="50" height="50"/></svg>');
+        font-family: "Comic Sans MS", cursive;
+        color: #00ff00;
+        margin: 0;
+        padding: 20px;
+        overflow-x: hidden;
+        animation: strobe 0.15s infinite;
+      }
+
+      h1 {
+        font-size: 72px;
+        text-align: center;
+        color: #ff00ff;
+        text-shadow:
+          3px 3px #ffff00,
+          6px 6px #00ffff;
+        animation: rainbow 2s infinite;
+      }
+
+      @keyframes rainbow {
+        0% {
+          color: #ff00ff;
+        }
+        25% {
+          color: #00ffff;
+        }
+        50% {
+          color: #ffff00;
+        }
+        75% {
+          color: #ff0000;
+        }
+        100% {
+          color: #ff00ff;
+        }
+      }
+
+      @keyframes blink {
+        0%,
+        50%,
+        100% {
+          opacity: 1;
+        }
+        25%,
+        75% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .blink {
+        animation: blink 1s infinite;
+      }
+
+      .spin {
+        display: inline-block;
+        animation: spin 2s linear infinite;
+      }
+
+      marquee {
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(
+          180deg,
+          #ffe87c 0%,
+          #ffd700 25%,
+          #b8860b 50%,
+          #ffd700 75%,
+          #ffe87c 100%
+        );
+        color: #ff0000;
+        padding: 10px;
+        border: 5px solid #00ff00;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .container {
+        background-color: #ffffff;
+        border: 10px ridge #ffd700;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 800px;
+      }
+
+      .snowflake {
+        position: fixed;
+        top: -10px;
+        z-index: 9999;
+        user-select: none;
+        cursor: default;
+        animation: fall linear infinite;
+        font-size: 30px;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+        }
+      }
+
+      .counter {
+        background-color: #000000;
+        color: #00ff00;
+        font-family: "Courier New", monospace;
+        padding: 10px;
+        text-align: center;
+        border: 3px solid #00ff00;
+        margin: 20px 0;
+      }
+
+      .button {
+        background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ffff00);
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 15px 30px;
+        border: 5px outset #ffd700;
+        cursor: pointer;
+        text-shadow: 2px 2px #000000;
+        animation: rainbow 3s infinite;
+      }
+
+      .button:hover {
+        border-style: inset;
+      }
+
+      .guestbook {
+        background-color: #ffff99;
+        border: 5px dashed #ff0000;
+        padding: 15px;
+        margin: 20px 0;
+        color: #000000;
+      }
+
+      .construction {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      table {
+        width: 100%;
+        border: 5px solid #ff0000;
+      }
+
+      td {
+        border: 3px solid #00ff00;
+        padding: 10px;
+        background-color: #ffe4e1;
+        color: #ff0000;
+        font-size: 18px;
+      }
+
+      a {
+        color: #0000ff;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: #800080;
+      }
+
+      .santa {
+        font-size: 100px;
+        display: inline-block;
+      }
+
+      .flying-reindeer {
+        position: fixed;
+        top: 0;
+        z-index: 9998;
+        user-select: none;
+        cursor: default;
+        animation: flyAcross linear infinite;
+        font-size: 40px;
+      }
+
+      @keyframes flyAcross {
+        from {
+          left: -100px;
+        }
+        to {
+          left: 100vw;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+      }
+
+      @keyframes neonGlow {
+        0% {
+          text-shadow:
+            0 0 10px #ff0000,
+            0 0 20px #ff0000,
+            0 0 30px #ff0000,
+            0 0 40px #ff0000;
+        }
+        25% {
+          text-shadow:
+            0 0 10px #00ff00,
+            0 0 20px #00ff00,
+            0 0 30px #00ff00,
+            0 0 40px #00ff00;
+        }
+        50% {
+          text-shadow:
+            0 0 10px #0000ff,
+            0 0 20px #0000ff,
+            0 0 30px #0000ff,
+            0 0 40px #0000ff;
+        }
+        75% {
+          text-shadow:
+            0 0 10px #ff00ff,
+            0 0 20px #ff00ff,
+            0 0 30px #ff00ff,
+            0 0 40px #ff00ff;
+        }
+        100% {
+          text-shadow:
+            0 0 10px #ff0000,
+            0 0 20px #ff0000,
+            0 0 30px #ff0000,
+            0 0 40px #ff0000;
+        }
+      }
+
+      .reindeer-names {
+        display: inline-block;
+        animation:
+          pulse 1s infinite,
+          neonGlow 2s infinite;
+      }
+
+      .pulse-text {
+        display: inline-block;
+        animation:
+          pulse 0.8s infinite,
+          neonGlow 2s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Snow effect -->
+    <script>
+      function createSnowflake() {
+        const snowflake = document.createElement("div");
+        snowflake.className = "snowflake";
+        const random = Math.random();
+        if (random > 0.7) {
+          snowflake.innerHTML = "🦌";
+        } else if (random > 0.5) {
+          snowflake.innerHTML = "❄";
+        } else {
+          snowflake.innerHTML = "⛄";
+        }
+        snowflake.style.left = Math.random() * window.innerWidth + "px";
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+        snowflake.style.opacity = Math.random();
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => {
+          snowflake.remove();
+        }, 5000);
+      }
+
+      setInterval(createSnowflake, 300);
+
+      // Flying reindeer across screen
+      function createFlyingReindeer() {
+        const reindeer = document.createElement("div");
+        reindeer.className = "flying-reindeer";
+        reindeer.innerHTML = "🦌🦌🦌";
+        reindeer.style.top = Math.random() * 80 + "%";
+        reindeer.style.animationDuration = Math.random() * 5 + 5 + "s";
+        document.body.appendChild(reindeer);
+
+        setTimeout(() => {
+          reindeer.remove();
+        }, 15000);
+      }
+
+      setInterval(createFlyingReindeer, 3000);
+      createFlyingReindeer();
+
+      // Cursor trail
+      document.addEventListener("mousemove", function (e) {
+        const trail = document.createElement("div");
+        trail.innerHTML = "🎄";
+        trail.style.position = "absolute";
+        trail.style.left = e.pageX + "px";
+        trail.style.top = e.pageY + "px";
+        trail.style.fontSize = "20px";
+        trail.style.pointerEvents = "none";
+        trail.style.zIndex = "1000";
+        document.body.appendChild(trail);
+
+        setTimeout(() => {
+          trail.remove();
+        }, 1000);
+      });
+
+      // Auto scroll
+      let scrollDirection = 1;
+      let scrollPosition = 0;
+      setInterval(() => {
+        scrollPosition += scrollDirection * 10;
+        if (scrollPosition > 800 || scrollPosition < 0) {
+          scrollDirection *= -1;
+        }
+        window.scrollBy(0, scrollDirection * 10);
+      }, 20);
+
+      // Visitor counter
+      let visits = localStorage.getItem("visits") || 0;
+      visits = parseInt(visits) + 1;
+      localStorage.setItem("visits", visits);
+
+      function updateCounter() {
+        const status =
+          Math.random() > 0.5 ? "DECLARED NICE" : "DECLARED NAUGHTY";
+        document.getElementById("counter").innerHTML =
+          "VISITOR #" + visits.toString().padStart(8, "0") + " - " + status;
+      }
+
+      // Alert on load
+      window.onload = function () {
+        updateCounter();
+        setTimeout(() => {
+          alert(
+            "🎅 MERRY CHRISTMAS! 🎄\n\nWelcome to the BEST Christmas site on the WORLD WIDE WEB!!!",
+          );
+        }, 2000);
+      };
+
+      // Random popups
+      setInterval(() => {
+        const messages = [
+          "🎅 HO HO HO!",
+          "🎄 MERRY CHRISTMAS!",
+          "🦌 RUDOLPH SAYS HI!",
+          "❄️ LET IT SNOW!",
+          "🎁 HAVE YOU BEEN NICE?",
+          "🔔 JINGLE ALL THE WAY!",
+          "⛄ FROSTY IS WATCHING YOU!",
+        ];
+        alert(messages[Math.floor(Math.random() * messages.length)]);
+      }, 15000);
+
+      function playJingleBells() {
+        alert("🔔 JINGLE BELLS! JINGLE BELLS! 🔔");
+      }
+    </script>
+
+    <!-- Auto-playing Christmas music -->
+    <audio autoplay loop>
+      <source
+        src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYmNkZWZn6Olqq6ytre7wMTIzNDU2d3h5ent8fX5/QEFCQwQExcaHiEkJyorLi8xMzU2Nzg5Ojo6OTk4NzY1MzEvLisqJyQhHhsXFBENCQYCAv75+PLu6ubiHh0Z"
+        type="audio/wav"
+      />
+    </audio>
+
+    <marquee behavior="scroll" direction="right" scrollamount="8">
+      <h1 class="blink">⛄ WELCOME TO SANTA'S CYBER SPACE ⛄</h1>
+    </marquee>
+
+    <marquee behavior="scroll" direction="left" scrollamount="10">
+      <span class="pulse-text"
+        >🦌 🎅 HO HO HO! MERRY CHRISTMAS! 🦌 🎄 HAPPY HOLIDAYS! 🦌 ❄️ SEASON'S
+        GREETINGS! 🦌 🎁 FELIZ NAVIDAD! 🦌 🔔 JOYEUX NOËL! 🦌 🎅 🦌</span
+      >
+    </marquee>
+
+    <div class="container">
+      <center>
+        <div class="construction">
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23FFD700' width='100' height='100'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em'%3E🚧%3C/text%3E%3C/svg%3E"
+            alt="Under Construction"
+            width="80"
+          />
+          <h2 style="color: #ff0000">*** UNDER CONSTRUCTION ***</h2>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23FFD700' width='100' height='100'/%3E%3Ctext x='50' y='50' font-size='40' text-anchor='middle' dy='.3em'%3E🚧%3C/text%3E%3C/svg%3E"
+            alt="Under Construction"
+            width="80"
+          />
+        </div>
+
+        <div class="counter" id="counter"></div>
+
+        <p style="font-size: 36px; color: #ff0000">
+          <span class="spin">🎄</span>
+          <b><u>BEST VIEWED IN NETSCAPE NAVIGATOR 4.0</u></b>
+          <span class="spin">🎄</span>
+        </p>
+
+        <div class="santa">🎅</div>
+
+        <h2 style="color: #0000ff; text-decoration: underline">
+          .:*~*:._.:*~*:._.:*~*:. CHRISTMAS COUNTDOWN .:*~*:._.:*~*:._.:*~*:.
+        </h2>
+
+        <p
+          style="font-size: 48px; color: #ff0000; font-weight: bold"
+          id="countdown"
+        ></p>
+
+        <script>
+          function updateCountdown() {
+            const christmas = new Date("December 25, 2025 00:00:00");
+            const now = new Date();
+            const diff = christmas - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(
+              (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+            );
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+              days +
+              " DAYS " +
+              hours +
+              " HOURS " +
+              minutes +
+              " MINUTES " +
+              seconds +
+              " SECONDS";
+          }
+          setInterval(updateCountdown, 1000);
+          updateCountdown();
+        </script>
+
+        <marquee behavior="alternate" direction="right" scrollamount="5">
+          <span style="font-size: 48px">🎁</span>
+        </marquee>
+
+        <table>
+          <tr>
+            <td><a href="#" onmouseover="playJingleBells()">🏠 HOME</a></td>
+            <td>
+              <a href="#" onmouseover="playJingleBells()">🎅 ABOUT SANTA</a>
+            </td>
+            <td>
+              <a href="#" onmouseover="playJingleBells()">🎄 CHRISTMAS TREE</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="#" onmouseover="playJingleBells()">🎁 GIFT IDEAS</a>
+            </td>
+            <td>
+              <a href="#" onmouseover="playJingleBells()">❄️ WINTER FUN</a>
+            </td>
+            <td><a href="#" onmouseover="playJingleBells()">📧 EMAIL ME</a></td>
+          </tr>
+        </table>
+
+        <br />
+
+        <button
+          class="button"
+          onclick="alert('🎅 SANTA SAYS: You have been NICE this year! 🎄')"
+        >
+          ✨ AM I NAUGHTY OR NICE? ✨
+        </button>
+
+        <br /><br />
+
+        <div
+          class="guestbook"
+          id="guestbook"
+          onmouseover="moveGuestbook()"
+          style="position: relative; transition: none"
+        >
+          <h3 style="text-decoration: underline">
+            📖 PLEASE SIGN MY GUESTBOOK!!! 📖
+          </h3>
+          <input
+            type="text"
+            placeholder="Your name"
+            style="width: 200px; font-family: Comic Sans MS"
+          />
+          <button onclick="alert('THANK YOU FOR SIGNING!!! 🎅🎄')">
+            SIGN!
+          </button>
+        </div>
+
+        <script>
+          function moveGuestbook() {
+            const guestbook = document.getElementById("guestbook");
+            const maxX = 100;
+            const maxY = 100;
+            const randomX = Math.floor(Math.random() * maxX * 2) - maxX;
+            const randomY = Math.floor(Math.random() * maxY * 2) - maxY;
+            guestbook.style.transform = `translate(${randomX}px, ${randomY}px)`;
+          }
+        </script>
+
+        <marquee behavior="scroll" direction="up" height="100" scrollamount="3">
+          <p style="color: #ff00ff; font-size: 20px">
+            ⭐ CHRISTMAS FACT #1: Santa has 31 hours to deliver all presents!
+            ⭐<br />
+            ⭐ CHRISTMAS FACT #2: Rudolph's nose glows because of parasites!
+            ⭐<br />
+            ⭐ CHRISTMAS FACT #3: Jingle Bells was originally a Thanksgiving
+            song! ⭐<br />
+          </p>
+        </marquee>
+
+        <hr style="border: 5px dotted #00ff00" />
+
+        <p style="font-size: 14px; color: #000000">
+          <blink>⚡ LAST UPDATED: December 1999 ⚡</blink><br />
+          <b>Webmaster:</b> Santa Claus<br />
+          <b>Email:</b> santa@northpole.com<br />
+          <b>Best viewed:</b> 800x600 resolution, millions of colors<br />
+          <br />
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='31'%3E%3Crect fill='%230000FF' width='88' height='31'/%3E%3Ctext x='44' y='16' fill='%23FFFFFF' font-size='12' text-anchor='middle'%3ENetscape%3C/text%3E%3C/svg%3E"
+            alt="Netscape Now!"
+          />
+          <br />
+          <span class="blink"
+            >*** YOU ARE VISITOR NUMBER <span id="counter2"></span> ***</span
+          >
+          <script>
+            document.getElementById("counter2").innerHTML = visits;
+          </script>
+        </p>
+
+        <marquee
+          behavior="scroll"
+          direction="left"
+          scrollamount="8"
+          style="background-color: #00ff00; color: #ff0000"
+        >
+          🎵 DECK THE HALLS WITH BOUGHS OF HOLLY FA LA LA LA LA LA LA LA LA 🎵
+        </marquee>
+      </center>
+    </div>
+
+    <marquee behavior="alternate" scrollamount="15">
+      <span style="font-size: 60px">🦌 🦌 🎅 🦌 🎄 🦌 ⛄ 🦌 🎁 🦌 ❄️ 🦌</span>
+    </marquee>
+
+    <marquee behavior="scroll" direction="right" scrollamount="12">
+      <span style="font-size: 50px">
+        🦌 <span class="reindeer-names">DASHER</span> 🦌
+        <span class="reindeer-names">DANCER</span> 🦌
+        <span class="reindeer-names">PRANCER</span> 🦌
+        <span class="reindeer-names">VIXEN</span> 🦌
+        <span class="reindeer-names">COMET</span> 🦌
+        <span class="reindeer-names">CUPID</span> 🦌
+        <span class="reindeer-names">DONNER</span> 🦌
+        <span class="reindeer-names">BLITZEN</span> 🦌
+        <span class="reindeer-names">RUDOLPH</span> 🦌
+      </span>
+    </marquee>
+  </body>
+</html>
